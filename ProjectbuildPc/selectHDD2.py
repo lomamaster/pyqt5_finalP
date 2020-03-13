@@ -4,7 +4,7 @@ import connectdb
 import mainUi
 
 
-class hdd1window(QtWidgets.QMainWindow):
+class hdd2window(QtWidgets.QMainWindow):
 
     def __init__(self):
         super().__init__()
@@ -150,9 +150,9 @@ class hdd1window(QtWidgets.QMainWindow):
         print(setdata)
         self.hide()
         self.ui = mainUi.mainwindow()
-        mainUi.hdd1name = str(setdata)
+        mainUi.hdd2name = str(setdata)
         self.ui.show()
-        self.ui.lblhdd.setText("{}".format(setdata))
+        self.ui.lblhdd_2.setText("{}".format(setdata))
         if mainUi.hddscore < scoredata:
             mainUi.hddscore = scoredata
         print(mainUi.hddscore)

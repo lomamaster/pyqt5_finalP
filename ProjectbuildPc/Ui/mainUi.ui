@@ -85,7 +85,7 @@
      <string>PSU</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_6">
+   <widget class="QPushButton" name="selectSink">
     <property name="geometry">
      <rect>
       <x>50</x>
@@ -111,98 +111,98 @@
      <string>HDD</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label">
+   <widget class="QLabel" name="lblcpu">
     <property name="geometry">
      <rect>
       <x>190</x>
       <y>70</y>
-      <width>47</width>
-      <height>13</height>
+      <width>421</width>
+      <height>16</height>
      </rect>
     </property>
     <property name="text">
-     <string>TextLabel</string>
+     <string/>
     </property>
    </widget>
-   <widget class="QLabel" name="label_2">
+   <widget class="QLabel" name="lblmb">
     <property name="geometry">
      <rect>
       <x>190</x>
       <y>140</y>
-      <width>47</width>
-      <height>13</height>
+      <width>421</width>
+      <height>16</height>
      </rect>
     </property>
     <property name="text">
-     <string>TextLabel</string>
+     <string/>
     </property>
    </widget>
-   <widget class="QLabel" name="label_3">
+   <widget class="QLabel" name="lblhdd">
     <property name="geometry">
      <rect>
       <x>190</x>
       <y>220</y>
-      <width>47</width>
-      <height>13</height>
+      <width>421</width>
+      <height>16</height>
      </rect>
     </property>
     <property name="text">
-     <string>TextLabel</string>
+     <string/>
     </property>
    </widget>
-   <widget class="QLabel" name="label_4">
+   <widget class="QLabel" name="lblram">
     <property name="geometry">
      <rect>
       <x>190</x>
       <y>360</y>
-      <width>47</width>
-      <height>13</height>
+      <width>421</width>
+      <height>16</height>
      </rect>
     </property>
     <property name="text">
-     <string>TextLabel</string>
+     <string/>
     </property>
    </widget>
-   <widget class="QLabel" name="label_5">
+   <widget class="QLabel" name="lblvga">
     <property name="geometry">
      <rect>
       <x>190</x>
       <y>430</y>
-      <width>47</width>
-      <height>13</height>
+      <width>421</width>
+      <height>16</height>
      </rect>
     </property>
     <property name="text">
-     <string>TextLabel</string>
+     <string/>
     </property>
    </widget>
-   <widget class="QLabel" name="label_6">
+   <widget class="QLabel" name="lblpsu">
     <property name="geometry">
      <rect>
       <x>190</x>
       <y>500</y>
-      <width>47</width>
-      <height>13</height>
+      <width>421</width>
+      <height>16</height>
      </rect>
     </property>
     <property name="text">
-     <string>TextLabel</string>
+     <string/>
     </property>
    </widget>
-   <widget class="QLabel" name="label_7">
+   <widget class="QLabel" name="lblsink">
     <property name="geometry">
      <rect>
       <x>190</x>
       <y>570</y>
-      <width>47</width>
-      <height>13</height>
+      <width>421</width>
+      <height>16</height>
      </rect>
     </property>
     <property name="text">
-     <string>TextLabel</string>
+     <string/>
     </property>
    </widget>
-   <widget class="QPushButton" name="selectHDD1_2">
+   <widget class="QPushButton" name="selectHDD2">
     <property name="geometry">
      <rect>
       <x>50</x>
@@ -215,20 +215,20 @@
      <string>HDD</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_8">
+   <widget class="QLabel" name="lblhdd_2">
     <property name="geometry">
      <rect>
       <x>190</x>
       <y>290</y>
-      <width>47</width>
-      <height>13</height>
+      <width>421</width>
+      <height>16</height>
      </rect>
     </property>
     <property name="text">
-     <string>TextLabel</string>
+     <string/>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="btncal">
     <property name="geometry">
      <rect>
       <x>700</x>
@@ -241,7 +241,7 @@
      <string>Calculate</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_2">
+   <widget class="QPushButton" name="btnhistory">
     <property name="geometry">
      <rect>
       <x>590</x>
@@ -254,16 +254,29 @@
      <string>History</string>
     </property>
    </widget>
-  </widget>
-  <widget class="QMenuBar" name="menubar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>965</width>
-     <height>21</height>
-    </rect>
-   </property>
+   <widget class="QLineEdit" name="lineEdit">
+    <property name="geometry">
+     <rect>
+      <x>242</x>
+      <y>650</y>
+      <width>231</width>
+      <height>20</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>650</y>
+      <width>47</width>
+      <height>13</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Name</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>

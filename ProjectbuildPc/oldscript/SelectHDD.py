@@ -1,31 +1,52 @@
-from PyQt5 import QtCore,QtWidgets,QtGui,uic,QtWidgets
+# -*- coding: utf-8 -*-
+
+# Form implementation generated from reading ui file 'SelectRAM.ui'
+#
+# Created by: PyQt5 UI code generator 5.13.2
+#
+# WARNING! All changes made in this file will be lost!
 
 import connectdb
-import mainUi
+from PyQt5 import QtCore, QtGui, QtWidgets
 
 
-class hdd1window(QtWidgets.QMainWindow):
+class Ui_Form(object):
+    def setupUi(self, Form):
+        Form.setObjectName("Form")
+        Form.resize(860, 649)
+        self.label = QtWidgets.QLabel(Form)
+        self.label.setGeometry(QtCore.QRect(170, 40, 221, 51))
+        font = QtGui.QFont()
+        font.setPointSize(26)
+        self.label.setFont(font)
+        self.label.setObjectName("label")
+        self.pushButton = QtWidgets.QPushButton(Form)
+        self.pushButton.setGeometry(QtCore.QRect(670, 590, 75, 23))
+        self.pushButton.setObjectName("pushButton")
 
-    def __init__(self):
-        super().__init__()
-        uic.loadUi(r'Ui\SelectHDD.ui', self)
-        self.setWindowTitle("PCbuildProject")
-        self.setFixedSize(self.size())
-        self.addSelected.clicked.connect(self.senddata)
         typeHdd = connectdb.onlyHDDtype()
+        self.comboBox = QtWidgets.QComboBox(Form)
+        self.comboBox.setGeometry(QtCore.QRect(540, 60, 121, 22))
+        self.comboBox.setObjectName("comboBox")
         for i in typeHdd:
-            self.cmbHDD.addItem(i)
-        self.tableWidget.setColumnCount(9)
-        temp = QtWidgets.QTableWidgetItem
-        self.showData(str(self.cmbHDD.currentText()))
-        self.cmbHDD.currentTextChanged.connect(self.showData)
-        self.pushBack.clicked.connect(self.getBack)
+            self.comboBox.addItem(i)
+
+        self.tableWidget = QtWidgets.QTableWidget(Form)
+        self.tableWidget.setGeometry(QtCore.QRect(20, 140, 821, 401))
+        self.tableWidget.setObjectName("tableWidget")
+        self.tableWidget.setColumnCount(8)
+        self.showData(1)
+        self.comboBox.currentIndexChanged.connect(self.showData)
+
+        self.retranslateUi(Form)
+        QtCore.QMetaObject.connectSlotsByName(Form)
+
 
     def showData(self, selectedtype):
         print(selectedtype)
         print(type(selectedtype))
         #self.currentTextChanged.connect(self.selectedtype)
-        if selectedtype == "SSD":
+        if selectedtype == 0:
                 data = connectdb.getSSDdata()
                 print("pulled data ssd")
                 row = len(data)
@@ -42,11 +63,9 @@ class hdd1window(QtWidgets.QMainWindow):
                 self.tableWidget.setHorizontalHeaderItem(4, temp("Capacity"))
                 self.tableWidget.setHorizontalHeaderItem(5, temp("Read"))
                 self.tableWidget.setHorizontalHeaderItem(6, temp("Write"))
-                self.tableWidget.setHorizontalHeaderItem(7, temp("      "))
-                self.tableWidget.setHorizontalHeaderItem(8, temp("      "))
                 print("set header")
                 for i in range(0, row):
-                    for x in range(9):
+                    for x in range(7):
                         if x == 0:
                             self.tableWidget.setItem(i, x, temp(data[i - 1]['Name']))
                         elif x == 1:
@@ -61,12 +80,7 @@ class hdd1window(QtWidgets.QMainWindow):
                             self.tableWidget.setItem(i, x, temp(data[i - 1]['Read']))
                         elif x == 6:
                             self.tableWidget.setItem(i, x, temp(data[i - 1]['Write']))
-                        elif x == 7:
-                            self.tableWidget.setItem(i, x, temp(" "))
-                        elif x == 8:
-                            self.tableWidget.setItem(i, x, temp(data[i - 1]['Score']))
-                            self.tableWidget.item(i, x).setForeground(QtGui.QColor(255, 255, 255))
-        elif selectedtype == "HDD":
+        elif selectedtype == 1:
                 data = connectdb.getHDDdata()
                 print("pulled data hdd")
                 row = len(data)
@@ -81,9 +95,8 @@ class hdd1window(QtWidgets.QMainWindow):
                 self.tableWidget.setHorizontalHeaderItem(5, temp("Read"))
                 self.tableWidget.setHorizontalHeaderItem(6, temp("Write"))
                 self.tableWidget.setHorizontalHeaderItem(7, temp("RPM"))
-                self.tableWidget.setHorizontalHeaderItem(8, temp("      "))
                 for i in range(0, row):
-                    for x in range(9):
+                    for x in range(8):
                         if x == 0:
                             self.tableWidget.setItem(i, x, temp(data[i - 1]['Name']))
                         elif x == 1:
@@ -100,10 +113,7 @@ class hdd1window(QtWidgets.QMainWindow):
                             self.tableWidget.setItem(i, x, temp(data[i - 1]['Write']))
                         elif x == 7:
                             self.tableWidget.setItem(i, x, temp(data[i - 1]['RPM']))
-                        elif x == 8:
-                            self.tableWidget.setItem(i, x, temp(data[i - 1]['Score']))
-                            self.tableWidget.item(i, x).setForeground(QtGui.QColor(255, 255, 255))
-        elif selectedtype == "SSHD":
+        elif selectedtype == 2:
                 data = connectdb.getSSHDdata()
                 print("pulled data ssdh")
                 row = len(data)
@@ -118,9 +128,8 @@ class hdd1window(QtWidgets.QMainWindow):
                 self.tableWidget.setHorizontalHeaderItem(5, temp("Read"))
                 self.tableWidget.setHorizontalHeaderItem(6, temp("Write"))
                 self.tableWidget.setHorizontalHeaderItem(7, temp("RPM"))
-                self.tableWidget.setHorizontalHeaderItem(8, temp("      "))
                 for i in range(0, row):
-                    for x in range(9):
+                    for x in range(8):
                         if x == 0:
                             self.tableWidget.setItem(i, x, temp(data[i - 1]['Name']))
                         elif x == 1:
@@ -137,27 +146,22 @@ class hdd1window(QtWidgets.QMainWindow):
                             self.tableWidget.setItem(i, x, temp(data[i - 1]['Write']))
                         elif x == 7:
                             self.tableWidget.setItem(i, x, temp(data[i - 1]['RPM']))
-                        elif x == 8:
-                            self.tableWidget.setItem(i, x, temp(data[i - 1]['Score']))
-                            self.tableWidget.item(i, x).setForeground(QtGui.QColor(255, 255, 255))
 
-    def senddata(self):
-        data = self.tableWidget.selectedItems()
-        for item in data:
-            print(item.text())
-        setdata = "{} {} {}".format(data[1].text(), data[0].text(), data[3].text())
-        scoredata = float(data[8].text())
-        print(setdata)
-        self.hide()
-        self.ui = mainUi.mainwindow()
-        mainUi.hdd1name = str(setdata)
-        self.ui.show()
-        self.ui.lblhdd.setText("{}".format(setdata))
-        if mainUi.hddscore < scoredata:
-            mainUi.hddscore = scoredata
-        print(mainUi.hddscore)
 
-    def getBack(self):
-        self.hide()
-        self.ui = mainUi.mainwindow()
-        self.ui.show()
+
+    def retranslateUi(self, Form):
+        _translate = QtCore.QCoreApplication.translate
+        Form.setWindowTitle(_translate("Form", "Form"))
+        self.label.setText(_translate("Form", "Select HDD"))
+        self.pushButton.setText(_translate("Form", "Select"))
+
+
+
+if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    Form = QtWidgets.QWidget()
+    ui = Ui_Form()
+    ui.setupUi(Form)
+    Form.show()
+    sys.exit(app.exec_())

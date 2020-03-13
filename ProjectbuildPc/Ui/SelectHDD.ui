@@ -6,45 +6,52 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>791</width>
-    <height>591</height>
+    <width>811</width>
+    <height>617</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string>Select HDD</string>
   </property>
-  <widget class="QPushButton" name="addSelected">
-   <property name="geometry">
-    <rect>
-     <x>610</x>
-     <y>520</y>
-     <width>75</width>
-     <height>23</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Select</string>
-   </property>
-  </widget>
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>90</x>
-     <y>50</y>
-     <width>71</width>
-     <height>16</height>
+     <x>40</x>
+     <y>30</y>
+     <width>211</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>24</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>Select HDD</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="addSelected">
+   <property name="geometry">
+    <rect>
+     <x>670</x>
+     <y>530</y>
+     <width>91</width>
+     <height>31</height>
     </rect>
    </property>
    <property name="text">
-    <string>Select GPU</string>
+    <string>Add</string>
    </property>
   </widget>
-  <widget class="QComboBox" name="comboBox">
+  <widget class="QComboBox" name="cmbHDD">
    <property name="geometry">
     <rect>
-     <x>470</x>
-     <y>40</y>
-     <width>171</width>
+     <x>380</x>
+     <y>50</y>
+     <width>331</width>
      <height>22</height>
     </rect>
    </property>
@@ -52,10 +59,10 @@
   <widget class="QTableWidget" name="tableWidget">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>91</y>
-     <width>751</width>
-     <height>401</height>
+     <x>40</x>
+     <y>100</y>
+     <width>731</width>
+     <height>411</height>
     </rect>
    </property>
    <property name="selectionMode">
@@ -65,24 +72,11 @@
     <enum>QAbstractItemView::SelectRows</enum>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushreset">
-   <property name="geometry">
-    <rect>
-     <x>450</x>
-     <y>520</y>
-     <width>75</width>
-     <height>23</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>reset</string>
-   </property>
-  </widget>
   <widget class="QPushButton" name="pushBack">
    <property name="geometry">
     <rect>
-     <x>320</x>
-     <y>520</y>
+     <x>570</x>
+     <y>540</y>
      <width>75</width>
      <height>23</height>
     </rect>

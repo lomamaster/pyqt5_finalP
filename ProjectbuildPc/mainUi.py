@@ -1,107 +1,150 @@
-# -*- coding: utf-8 -*-
-
-# Form implementation generated from reading ui file 'mainUi.ui'
-#
-# Created by: PyQt5 UI code generator 5.13.2
-#
-# WARNING! All changes made in this file will be lost!
-
-import pymongo
-from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5 import QtCore,QtWidgets,QtGui,uic,QtWidgets
 from PyQt5.QtWidgets import QMessageBox
 
+cpuscore = 1.00
+gpuscore = 1.00
+psuscore = 1.00
+hddscore = 0.00
+sinkscore = 1.00
+ramscore = 1.00
+mbscore = 1.00
 
-class Ui_MainWindow(object):
+PCname = ""
+cpuname = ""
+vganame = ""
+mbname = ""
+psuname = ""
+hdd1name = ""
+hdd2name = ""
+sinkname = ""
+ramname = ""
+
+class mainwindow(QtWidgets.QMainWindow):
+    def __init__(self):
+        super().__init__()
+        uic.loadUi(r'Ui\mainUi.ui', self)
+        self.setWindowTitle("PCbuildProject")
+        self.setFixedSize(self.size())
+        self.selectCPU.clicked.connect(self.openCPU)
+        self.selectMainboard.clicked.connect(self.openMB)
+        self.selectHDD1.clicked.connect(self.openHDD1)
+        self.selectHDD2.clicked.connect(self.openHDD2)
+        self.selectRam.clicked.connect(self.openRAM)
+        self.selectPSU.clicked.connect(self.openPSU)
+        self.selectVGA.clicked.connect(self.openGPU)
+        self.selectSink.clicked.connect(self.openSink)
+        self.btnhistory.clicked.connect(self.openHistory)
+        self.btncal.clicked.connect(self.openCal)
+        self.lblcpu.setText(cpuname)
+        self.lblmb.setText(mbname)
+        self.lblhdd.setText(hdd1name)
+        self.lblhdd_2.setText(hdd2name)
+        self.lblram.setText(ramname)
+        self.lblvga.setText(vganame)
+        self.lblpsu.setText(psuname)
+        self.lblsink.setText(sinkname)
 
     def openCPU(self):
-        from SelectCPU import Ui_Form
-        self.window = QtWidgets.QDialog()
-        self.ui = Ui_Form()
-        self.ui.setupUi(self.window)
-        self.window.show()
+        import selectCPU
+        self.hide()
+        self.Open = selectCPU.cpuwindow()
+        self.Open.show()
 
-    def setupUi(self, MainWindow):
-        MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(965, 722)
-        self.centralwidget = QtWidgets.QWidget(MainWindow)
-        self.centralwidget.setObjectName("centralwidget")
+    def openHDD1(self):
+        import selectHDD
+        self.hide()
+        self.Open = selectHDD.hdd1window()
+        self.Open.show()
 
-        #CPUbutton
-        self.selectCPU = QtWidgets.QPushButton(self.centralwidget)
-        self.selectCPU.setGeometry(QtCore.QRect(50, 50, 451, 61))
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.selectCPU.sizePolicy().hasHeightForWidth())
-        self.selectCPU.setSizePolicy(sizePolicy)
-        self.selectCPU.setObjectName("selectCPU")
-        self.selectCPU.clicked.connect(self.openCPU)
+    def openHDD2(self):
+        import selectHDD2
+        self.hide()
+        self.Open = selectHDD2.hdd2window()
+        self.Open.show()
 
-        #MBbutton
-        self.selectMainboard = QtWidgets.QPushButton(self.centralwidget)
-        self.selectMainboard.setGeometry(QtCore.QRect(50, 120, 451, 71))
-        self.selectMainboard.setObjectName("selectMainboard")
+    def openMB(self):
+        import selectMB
+        self.hide()
+        self.Open = selectMB.mbwindow()
+        self.Open.show()
 
-        #RAMbutton
-        self.selectRam = QtWidgets.QPushButton(self.centralwidget)
-        self.selectRam.setGeometry(QtCore.QRect(50, 270, 451, 61))
-        self.selectRam.setObjectName("selectRam")
+    def openRAM(self):
+        import selectRAM
+        self.hide()
+        self.Open = selectRAM.ramwindow()
+        self.Open.show()
 
-        #VGAbutton
-        self.selectVGA = QtWidgets.QPushButton(self.centralwidget)
-        self.selectVGA.setGeometry(QtCore.QRect(50, 340, 451, 61))
-        self.selectVGA.setObjectName("selectVGA")
+    def openPSU(self):
+        import selectPSU
+        self.hide()
+        self.Open = selectPSU.psuwindow()
+        self.Open.show()
 
-        #PSUbutton
-        self.selectPSU = QtWidgets.QPushButton(self.centralwidget)
-        self.selectPSU.setGeometry(QtCore.QRect(50, 410, 451, 61))
-        self.selectPSU.setObjectName("selectPSU")
+    def openGPU(self):
+        import selectGPU
+        self.hide()
+        self.Open = selectGPU.gpuwindow()
+        self.Open.show()
 
-        self.pushButton_6 = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton_6.setGeometry(QtCore.QRect(50, 480, 451, 51))
-        self.pushButton_6.setObjectName("pushButton_6")
+    def openSink(self):
+        import selectSink
+        self.hide()
+        self.Open = selectSink.sinkwindow()
+        self.Open.show()
 
-        # HDDbutton
-        self.selectHDD1 = QtWidgets.QPushButton(self.centralwidget)
-        self.selectHDD1.setGeometry(QtCore.QRect(50, 200, 451, 61))
-        self.selectHDD1.setObjectName("selectHDD1")
-        MainWindow.setCentralWidget(self.centralwidget)
+    def openHistory(self):
+        import historyForm
+        self.hide()
+        self.Open = historyForm.historywindow()
+        self.Open.show()
 
+    def openCal(self):
+        if self.lblcpu.text() == "" or self.lblvga.text() == "" or self.lblpsu.text() == "" or (self.lblhdd.text() == "" or self.lblhdd_2.text() == "") or self.lblmb.text() == "" \
+                or self.lblsink.text() == "" or self.lblram.text() == "" or self.lineEdit.text() == "":
+            self.erroroccurst()
+        else:
+            import calForm
+            print(cpuscore)
+            self.cpuscore = float(cpuscore)
+            print(gpuscore)
+            self.gpuscore = float(gpuscore)
+            print(psuscore)
+            self.psuscore = float(psuscore)
+            print(hddscore)
+            self.hddscore = float(hddscore)
+            print(mbscore)
+            self.mbscore = float(mbscore)
+            print(sinkscore)
+            self.sinkscore = float(sinkscore)
+            print(ramscore)
+            self.ramscore = float(ramscore)
+            total = ((self.cpuscore + self.gpuscore + self.ramscore) * (self.mbscore + self.psuscore + self.sinkscore)) * (100 * self.hddscore)
+            selectedcpu = self.lblcpu.text()
+            selectedgpu = self.lblvga.text()
+            selectedpsu = self.lblpsu.text()
+            selectedhdd1 = self.lblhdd.text()
+            selectedhdd2 = self.lblhdd_2.text()
+            selectedmb = self.lblmb.text()
+            selectedsink = self.lblsink.text()
+            selectedram = self.lblram.text()
+            thisPC = self.lineEdit.text()
+            print(selectedcpu)
+            print(total)
+            self.Open = calForm.calculationwindow(thisPC, selectedcpu, selectedgpu, selectedpsu, selectedhdd1, selectedhdd2, selectedmb, selectedsink, selectedram, total)
+            self.Open.show()
 
-        self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 965, 21))
-        self.menubar.setObjectName("menubar")
-        MainWindow.setMenuBar(self.menubar)
-        self.statusbar = QtWidgets.QStatusBar(MainWindow)
-        self.statusbar.setObjectName("statusbar")
-        MainWindow.setStatusBar(self.statusbar)
-
-        self.retranslateUi(MainWindow)
-        QtCore.QMetaObject.connectSlotsByName(MainWindow)
-
-    def retranslateUi(self, MainWindow):
-        _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.selectCPU.setText(_translate("MainWindow", "CPU"))
-        self.selectMainboard.setText(_translate("MainWindow", "Mainboard"))
-        self.selectRam.setText(_translate("MainWindow", "RAM"))
-        self.selectVGA.setText(_translate("MainWindow", "VGA"))
-        self.selectPSU.setText(_translate("MainWindow", "PSU"))
-        self.pushButton_6.setText(_translate("MainWindow", "SINK CPU"))
-        self.selectHDD1.setText(_translate("MainWindow", "HDD"))
-
-    def show_popup(self):
+    def erroroccurst(self):
         msg = QMessageBox()
-        msg.setWindowTitle("Hello world")
-        msg.setText("Hello again")
+        msg.setWindowTitle("Error.")
+        msg.setText("Please Select Hardware")
+        msg.setIcon(QMessageBox.Critical)
 
         x = msg.exec_()
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     import sys
     app = QtWidgets.QApplication(sys.argv)
-    MainWindow = QtWidgets.QMainWindow()
-    ui = Ui_MainWindow()
-    ui.setupUi(MainWindow)
-    MainWindow.show()
-    sys.exit(app.exec_())
+    window = mainwindow()
+    window.show()
+    window.raise_()
+    sys.exit(app.exec())

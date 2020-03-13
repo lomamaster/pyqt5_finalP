@@ -22,17 +22,22 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ComputerEquipmentManagementSystem" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="run.code.analysis.last.selected.profile" value="aDefault" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\ProjectbuildPc" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\ProjectbuildPc\oldscript" />
+      <recent name="E:\ProjectbuildPc" />
       <recent name="E:\ProjectbuildPc\Ui" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.SelectHDD">
-    <configuration name="SelectCPU" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.databaseStructure">
+    <configuration name="MainWindow" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="ProjectbuildPc" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -40,53 +45,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Script" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/SelectCPU.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="SelectHDD" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="ProjectbuildPc" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/SelectHDD.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="connectdb" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="ProjectbuildPc" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/connectdb.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Script/MainWindow.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -137,13 +100,76 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="mainUi" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="ProjectbuildPc" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="E:\ProjectbuildPc\oldscript\mainUi.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="mainUi" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="ProjectbuildPc" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Ui" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="E:\ProjectbuildPc\mainUi.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="selectCPU" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="ProjectbuildPc" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/selectCPU.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.SelectHDD" />
-        <item itemvalue="Python.SelectCPU" />
-        <item itemvalue="Python.mainUi (1)" />
         <item itemvalue="Python.databaseStructure" />
-        <item itemvalue="Python.connectdb" />
+        <item itemvalue="Python.mainUi (1)" />
+        <item itemvalue="Python.selectCPU" />
+        <item itemvalue="Python.mainUi" />
+        <item itemvalue="Python.MainWindow" />
       </list>
     </recent_temporary>
   </component>
@@ -169,33 +195,68 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="718" y="390" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1040@0.0.1920.1040" timestamp="1581773959389" />
+    <state width="640" height="466" key="DebuggerActiveHint" timestamp="1583272061126">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="640" height="466" key="DebuggerActiveHint/0.0.1920.1040@0.0.1920.1040" timestamp="1583272061126" />
     <state x="1081" y="278" key="FileChooserDialogImpl" timestamp="1582215364220">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1081" y="278" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1582215364220" />
-    <state width="1899" height="231" key="GridCell.Tab.0.bottom" timestamp="1582980157660">
+    <state width="1899" height="295" key="GridCell.Tab.0.bottom" timestamp="1583870995053">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="231" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1582980157660" />
-    <state width="1899" height="231" key="GridCell.Tab.0.center" timestamp="1582980157660">
+    <state width="1899" height="295" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1583870995053" />
+    <state width="1899" height="295" key="GridCell.Tab.0.center" timestamp="1583870995053">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="231" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1582980157660" />
-    <state width="1899" height="231" key="GridCell.Tab.0.left" timestamp="1582980157660">
+    <state width="1899" height="295" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1583870995053" />
+    <state width="1899" height="295" key="GridCell.Tab.0.left" timestamp="1583870995053">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="231" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1582980157660" />
-    <state width="1899" height="231" key="GridCell.Tab.0.right" timestamp="1582980157660">
+    <state width="1899" height="295" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1583870995053" />
+    <state width="1899" height="295" key="GridCell.Tab.0.right" timestamp="1583870995053">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="231" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1582980157660" />
-    <state x="377" y="175" key="SettingsEditor" timestamp="1582979557002">
+    <state width="1899" height="295" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1583870995053" />
+    <state width="1899" height="161" key="GridCell.Tab.1.bottom" timestamp="1583798637253">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="377" y="175" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1582979557002" />
-    <state x="122" y="337" key="com.intellij.ide.util.TipDialog" timestamp="1582622215772">
+    <state width="1899" height="161" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1583798637253" />
+    <state width="1899" height="161" key="GridCell.Tab.1.center" timestamp="1583798637253">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="122" y="337" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1582622215772" />
+    <state width="1899" height="161" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1583798637253" />
+    <state width="1899" height="161" key="GridCell.Tab.1.left" timestamp="1583798637253">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1899" height="161" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1583798637253" />
+    <state width="1899" height="161" key="GridCell.Tab.1.right" timestamp="1583798637253">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1899" height="161" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1583798637253" />
+    <state x="377" y="175" key="SettingsEditor" timestamp="1582992133653">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="377" y="175" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1582992133653" />
+    <state x="122" y="341" width="607" height="349" key="com.intellij.ide.util.TipDialog" timestamp="1583800282179">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="122" y="341" width="607" height="349" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1583800282179" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1583143068907">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1583143068907" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

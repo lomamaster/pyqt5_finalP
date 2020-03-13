@@ -1,47 +1,39 @@
-# -*- coding: utf-8 -*-
-
-# Form implementation generated from reading ui file 'SelectCPU.ui'
-#
-# Created by: PyQt5 UI code generator 5.13.2
-#
-# WARNING! All changes made in this file will be lost!
+from PyQt5 import QtCore,QtWidgets,QtGui,uic,QtWidgets
+from PyQt5.QtGui import QBrush, QColor
 
 import connectdb
-from PyQt5 import QtCore, QtGui, QtWidgets
+import mainUi
 
 
-class Ui_Form(object):
-    def setupUi(self, Form):
-        Form.setObjectName("Form")
-        Form.resize(811, 591)
-        self.label = QtWidgets.QLabel(Form)
-        self.label.setGeometry(QtCore.QRect(100, 50, 171, 51))
-        font = QtGui.QFont()
-        font.setPointSize(24)
-        font.setBold(True)
-        font.setWeight(75)
-        self.label.setFont(font)
-        self.label.setObjectName("label")
+class cpuwindow(QtWidgets.QMainWindow):
 
-        self.pushButton = QtWidgets.QPushButton(Form)
-        self.pushButton.setGeometry(QtCore.QRect(670, 530, 91, 31))
-        self.pushButton.setObjectName("pushButton")
-
-        listCPU = connectdb.onlyCPUname()
-        self.cmbCPUname = QtWidgets.QComboBox(Form)
-        self.cmbCPUname.setGeometry(QtCore.QRect(360, 70, 331, 22))
-        self.cmbCPUname.setObjectName("cmbCPUname")
-        for i in listCPU:
-            self.cmbCPUname.addItem(i)
-
-        self.tableWidget = QtWidgets.QTableWidget(Form)
-        self.tableWidget.setGeometry(QtCore.QRect(40, 100, 731, 411))
-        self.tableWidget.setObjectName("tableWidget")
+    def __init__(self):
+        super().__init__()
+        uic.loadUi(r'Ui\SelectCPU.ui', self)
+        self.setWindowTitle("PCbuildProject")
+        self.setFixedSize(self.size())
+        self.addSelected.clicked.connect(self.senddata)
         data = connectdb.getCPUdata()
         row = len(data)
-        self.tableWidget.setColumnCount(10)
+        self.tableWidget.setColumnCount(11)
         self.tableWidget.setRowCount(row)
+        CPUmanu = connectdb.onlyCPUmanu()
+        for i in CPUmanu:
+            self.cmbbrand.addItem(i)
+        self.showData()
+        self.cmbbrand.currentIndexChanged.connect(self.selectedData)
+        self.pushBack.clicked.connect(self.getBack)
+
+    def showData(self):
+        data = connectdb.getCPUdata()
+        print("pulled data mb")
+        row = len(data)
+        print("set data")
+        # self.tableWidget.setColumnCount(7)
+        self.tableWidget.setRowCount(row)
+        print("set row")
         temp = QtWidgets.QTableWidgetItem
+        print("set temp")
         self.tableWidget.setHorizontalHeaderItem(0, temp("Name"))
         self.tableWidget.setHorizontalHeaderItem(1, temp("Manufacturer"))
         self.tableWidget.setHorizontalHeaderItem(2, temp("Core Count"))
@@ -52,45 +44,86 @@ class Ui_Form(object):
         self.tableWidget.setHorizontalHeaderItem(7, temp("Micro Architecture"))
         self.tableWidget.setHorizontalHeaderItem(8, temp("Lithography"))
         self.tableWidget.setHorizontalHeaderItem(9, temp("Generation"))
+        self.tableWidget.setHorizontalHeaderItem(10, temp("     "))
         for i in range(0, row):
-            for x in range(10):
+            for x in range(11):
                 if x == 0:
-                    self.tableWidget.setItem(i, x, temp(data[i-1]['Name']))
+                    self.tableWidget.setItem(i, x, temp(data[i - 1]['Name']))
                 elif x == 1:
-                    self.tableWidget.setItem(i, x, temp(data[i-1]['Manufacturer']))
+                    self.tableWidget.setItem(i, x, temp(data[i - 1]['Manufacturer']))
                 elif x == 2:
-                    self.tableWidget.setItem(i, x, temp(data[i-1]['Core Count']))
+                    self.tableWidget.setItem(i, x, temp(data[i - 1]['Core Count']))
                 elif x == 3:
-                    self.tableWidget.setItem(i, x, temp(data[i-1]['Threads Count']))
+                    self.tableWidget.setItem(i, x, temp(data[i - 1]['Threads Count']))
                 elif x == 4:
-                    self.tableWidget.setItem(i, x, temp(data[i-1]['Core Clock']))
+                    self.tableWidget.setItem(i, x, temp(data[i - 1]['Core Clock']))
                 elif x == 5:
-                    self.tableWidget.setItem(i, x, temp(data[i-1]['Socket']))
+                    self.tableWidget.setItem(i, x, temp(data[i - 1]['Socket']))
                 elif x == 6:
-                    self.tableWidget.setItem(i, x, temp(data[i-1]['BoostClock']))
+                    self.tableWidget.setItem(i, x, temp(data[i - 1]['BoostClock']))
                 elif x == 7:
-                    self.tableWidget.setItem(i, x, temp(data[i-1]['Micro Architecture']))
+                    self.tableWidget.setItem(i, x, temp(data[i - 1]['Micro Architecture']))
                 elif x == 8:
-                    self.tableWidget.setItem(i, x, temp(data[i-1]['Lithography']))
+                    self.tableWidget.setItem(i, x, temp(data[i - 1]['Lithography']))
                 elif x == 9:
-                    self.tableWidget.setItem(i, x, temp(data[i-1]['Generation']))
+                    self.tableWidget.setItem(i, x, temp(data[i - 1]['Generation']))
+                elif x == 10:
+                    self.tableWidget.setItem(i, x, temp(data[i - 1]['Score']))
+                    self.tableWidget.item(i, x).setForeground(QtGui.QColor(255, 255, 255))
 
-        self.retranslateUi(Form)
-        QtCore.QMetaObject.connectSlotsByName(Form)
+    def selectedData(self):
+        selectedmanu = str(self.cmbbrand.currentText())
+        print(selectedmanu)
+        print(type(selectedmanu))
+        # self.currentTextChanged.connect(self.selectedtype)
+        data = connectdb.getSelectCPUdata(selectedmanu)
+        print("pulled data cpu")
+        row = len(data)
+        print("set data")
+        # self.tableWidget.setColumnCount(7)
+        self.tableWidget.setRowCount(row)
+        print("set row")
+        temp = QtWidgets.QTableWidgetItem
+        print("set temp")
+        for i in range(0, row):
+            for x in range(11):
+                if x == 0:
+                    self.tableWidget.setItem(i, x, temp(data[i - 1]['Name']))
+                elif x == 1:
+                    self.tableWidget.setItem(i, x, temp(data[i - 1]['Manufacturer']))
+                elif x == 2:
+                    self.tableWidget.setItem(i, x, temp(data[i - 1]['Core Count']))
+                elif x == 3:
+                    self.tableWidget.setItem(i, x, temp(data[i - 1]['Threads Count']))
+                elif x == 4:
+                    self.tableWidget.setItem(i, x, temp(data[i - 1]['Core Clock']))
+                elif x == 5:
+                    self.tableWidget.setItem(i, x, temp(data[i - 1]['Socket']))
+                elif x == 6:
+                    self.tableWidget.setItem(i, x, temp(data[i - 1]['BoostClock']))
+                elif x == 7:
+                    self.tableWidget.setItem(i, x, temp(data[i - 1]['Micro Architecture']))
+                elif x == 8:
+                    self.tableWidget.setItem(i, x, temp(data[i - 1]['Lithography']))
+                elif x == 9:
+                    self.tableWidget.setItem(i, x, temp(data[i - 1]['Generation']))
+                elif x == 10:
+                    self.tableWidget.setItem(i, x, temp(data[i - 1]['Score']))
+                    self.tableWidget.item(i, x).setForeground(QtGui.QColor(255, 255, 255))
 
-    def retranslateUi(self, Form):
-        _translate = QtCore.QCoreApplication.translate
-        Form.setWindowTitle(_translate("Form", "Select CPU"))
-        self.label.setText(_translate("Form", "Select CPU"))
-        self.pushButton.setText(_translate("Form", "Add"))
+    def senddata(self):
+        data = self.tableWidget.selectedItems()
+        setdata = "{} {} {}".format(data[9].text(),data[1].text(),data[0].text())
+        print(setdata)
+        self.hide()
+        self.ui = mainUi.mainwindow()
+        mainUi.cpuname = str(setdata)
+        self.ui.show()
+        self.ui.lblcpu.setText("{}".format(setdata))
+        mainUi.cpuscore = data[10].text()
+        print(mainUi.cpuscore)
 
-
-if __name__ == "__main__":
-    import sys
-
-    app = QtWidgets.QApplication(sys.argv)
-    Form = QtWidgets.QWidget()
-    ui = Ui_Form()
-    ui.setupUi(Form)
-    Form.show()
-    sys.exit(app.exec_())
+    def getBack(self):
+        self.hide()
+        self.ui = mainUi.mainwindow()
+        self.ui.show()
